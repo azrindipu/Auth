@@ -21,16 +21,7 @@ import java.util.function.Function;
 public class TokenUtil {
 	private static final Logger logger = LoggerFactory.getLogger(TokenUtil.class);
 
-	@Value("jwt.time.hour")
-	private String jwtTimeHour;
-
-	@Value("jwt.time.minute")
-	private String jwtTimeMinue;
-
-	@Value("jwt.time.second")
-	private String jwtTimeSecond;
-
-	private long JWT_TOKEN_VALIDITY = Long.parseLong(jwtTimeHour) * Long.parseLong(jwtTimeMinue) * Long.parseLong(jwtTimeSecond);
+	private long JWT_TOKEN_VALIDITY = 24*60*60;
 
 	@Autowired
 	private UserRepository userRepository;
